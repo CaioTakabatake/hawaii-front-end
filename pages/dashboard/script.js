@@ -1,18 +1,15 @@
-// Função para adicionar uma linha à tabela
 function addRow(tableId) {
   const table = document.getElementById(tableId);
   const tbody = table.querySelector("tbody");
 
   const newRow = document.createElement("tr");
 
-  // Célula de entrada de texto editável
   const cell1 = document.createElement("td");
   const input = document.createElement("input");
   input.type = "text";
   input.placeholder = "Digite o valor";
   cell1.appendChild(input);
 
-  // Célula de botões de ação
   const cell2 = document.createElement("td");
   const removeButton = document.createElement("button");
   removeButton.textContent = "Remover";
@@ -26,12 +23,10 @@ function addRow(tableId) {
   tbody.appendChild(newRow);
 }
 
-// Função para remover uma linha da tabela
 function removeRow(row) {
   row.parentNode.removeChild(row);
 }
 
-// Adicionar eventos aos botões
 document.getElementById("addAttractionButton").addEventListener("click", () => {
   addRow("attractionsTable");
 });
@@ -42,7 +37,7 @@ document.getElementById("addFoodStallButton").addEventListener("click", () => {
 
 async function fetchPartyData() {
   try {
-    const response = await fetch("http://localhost:3000/party"); // Substitua pela URL da sua API
+    const response = await fetch("http://localhost:3000/party");
     if (!response.ok) {
       throw new Error("Erro ao buscar os dados da API");
     }
@@ -53,7 +48,6 @@ async function fetchPartyData() {
   }
 }
 
-// Função para preencher a tabela de atrações
 async function fillAttractionsTable(data) {
   const attractionsTable = document
     .getElementById("attractionsTable")
@@ -69,7 +63,6 @@ async function fillAttractionsTable(data) {
   });
 }
 
-// Função para preencher a tabela de barracas de comida
 async function fillFoodStallsTable(data) {
   const foodStallsTable = document
     .getElementById("foodStallsTable")
@@ -101,18 +94,15 @@ document.addEventListener("DOMContentLoaded", () => {
   fillData();
   const dashboardForm = document.getElementById("dashboardForm");
 
-  // Adiciona um ouvinte para o evento "submit" do formulário
   dashboardForm.addEventListener("submit", async (e) => {
-    e.preventDefault(); // Impede o comportamento padrão do formulário (recarregar a página)
+    e.preventDefault();
 
-    // Coleta os dados do formulário
     const formData = new FormData(dashboardForm);
     const formDataObject = {};
     formData.forEach((value, key) => {
       formDataObject[key] = value;
     });
 
-    // Coleta os dados das tabelas de atrações e barracas de comida
     const attractionsTable = document.getElementById("attractionsTable");
     const foodStallsTable = document.getElementById("foodStallsTable");
 
@@ -129,7 +119,6 @@ document.addEventListener("DOMContentLoaded", () => {
       foodStallsData.push(foodStallName);
     }
 
-    // Monta o objeto de dados completo
     const partyData = {
       name: formDataObject.name,
       local: formDataObject.local,
@@ -140,7 +129,6 @@ document.addEventListener("DOMContentLoaded", () => {
       barracas_comida: foodStallsData,
     };
 
-    // Faz a requisição PUT para atualizar os dados
     try {
       const response = await fetch("http://localhost:3000/party", {
         method: "PUT",
