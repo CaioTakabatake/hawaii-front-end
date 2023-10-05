@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Dashboard | Havai</title>
+  </head>
+  <body>
+    <header>
+      <img src="../assets/logo.jfif" alt="" />
+      <nav>
+        <a href="../home/index.html">Home</a>
+        <a href="../dashboard/index.html" class="active">Dashboard</a>
+      </nav>
+    </header>
+    <main>
+      <h1>Dashboard</h1>
+      <form id="dashboardForm">
+        <h2>Informações da Festa</h2>
+        <div class="box">
+          <label for="name">Nome da Festa:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value="Senai - Festa Do Havai"
+          />
+        </div>
+        <div class="box">
+          <label for="local">Local:</label>
+          <input type="text" id="local" name="local" value="SENAI" />
+        </div>
+        <div class="box">
+          <label for="data">Data:</label>
+          <input
+            type="text"
+            id="data"
+            name="data"
+            value="07 de Outubro de 2023"
+          />
+        </div>
+
+        <div class="box">
+          <label for="horario">Horário:</label>
+          <input
+            type="text"
+            id="horario"
+            name="horario"
+            value="16:00 - 21:00"
+          />
+        </div>
+
+        <div class="box">
+          <label for="valor">Valor:</label>
+          <input type="text" id="valor" name="valor" value="R$ 10,00" />
+        </div>
+
+        <div class="box">
+          <h2>Atrações de Entretenimento</h2>
+          <div class="table">
+            <table id="attractionsTable">
+              <thead>
+                <tr>
+                  <th>Atração</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Use JavaScript para adicionar linhas à tabela -->
+              </tbody>
+            </table>
+          </div>
+          <button type="button" id="addAttractionButton">
+            Adicionar Atração
+          </button>
+        </div>
+
+        <div class="box">
+          <h2>Barracas de Comida</h2>
+          <div class="table">
+            <table id="foodStallsTable">
+              <thead>
+                <tr>
+                  <th>Barraca de Comida</th>
+                  <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Use JavaScript para adicionar linhas à tabela -->
+              </tbody>
+            </table>
+          </div>
+          <button type="button" id="addFoodStallButton">
+            Adicionar Barraca
+          </button>
+        </div>
+
+        <button type="submit">Salvar Alterações</button>
+      </form>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

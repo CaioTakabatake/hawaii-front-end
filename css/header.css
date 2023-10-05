@@ -1,0 +1,36 @@
+body {
+  background-color: #191622;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px;
+  box-shadow: 4px 4px 12px #0d0b11;
+}
+
+header img {
+  border-radius: 50%;
+  width: 64px;
+}
+
+header nav {
+  display: flex;
+  gap: 32px;
+}
+
+header nav a {
+  text-transform: uppercase;
+  font-weight: bold;
+  opacity: 0.7;
+  transition: 0.3s ease-in-out;
+}
+
+header nav a.active {
+  opacity: 1;
+}
+
+header nav a:hover {
+  opacity: 1;
+}

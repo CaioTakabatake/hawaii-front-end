@@ -1,0 +1,55 @@
+main {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 32px;
+  margin-top: 16px;
+}
+
+main .top {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+main .top .price {
+  color: #67e480;
+}
+
+.table {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+table {
+  box-shadow: 4px 4px 12px #0d0b11;
+  border-collapse: collapse;
+}
+
+table thead {
+  background-color: #0d0b11;
+}
+
+table thead tr th {
+  color: rgb(255, 255, 255, 0.8);
+  text-align: left;
+  padding: 7px 20px;
+  font-weight: 400;
+  letter-spacing: 0.75px;
+}
+
+tbody tr {
+  transition: 0.3s ease-in-out;
+}
+
+tbody tr:hover {
+  background-color: rgb(0, 0, 0, 0.5);
+}
+
+tbody td {
+  padding: 7px 10px;
+}
